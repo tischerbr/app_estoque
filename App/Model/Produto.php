@@ -10,8 +10,8 @@ namespace App\Model;
 
 class Produto
 {
-   private $id;
-   private $descricao;
+    private $id;
+    private $descricao;
     private $quantidade;
     private $valor;
     private $validade;

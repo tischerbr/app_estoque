@@ -4,15 +4,20 @@ include 'cabecalho.php';?>
 <h1>Cadastrar novo produto</h1>
 <?php
 include '../vendor/autoload.php';
-if ($HTTP_POST) {
+if ($_POST) {
     $p = new \App\Model\Produto();
-    $p->setDescricao($HTTP_POST{'descricao'});
-    $p->setValor($HTTP_POST{'valor'});
-    $p->setQuantidade($HTTP_POST{'quantidade'});
-    $p->setValidade($HTTP_POST{'validade'});
+    $p->setDescricao($_POST['descricao']);
+    $p->setQuantidade(\App\Helper\Moeda::set($_POST['quantidade']));
+
+    !empty ($POST['valor']) ?  $p->setValor(\App\Helper\Moeda::set($_POST['valor'])) : $p->setValor(null) ;
+    !empty ($POST['validade']) ? $p->setValidade(\App\Helper\Data::set($_POST['validade']))  : $p->setValidade(null) ;
+
+
+
+
     $pDAO = new \App\DAO\ProdutoDAO();
     if ($pDAO->inserir($p)){
-        echo "<div class='alert alert-sucess'>Produto Csdastrado com Sucesso</div>";
+        echo "<div class='alert alert-success'>Produto Cadastrado com Sucesso</div>";
     }
 }
  ?>
