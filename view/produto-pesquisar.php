@@ -19,7 +19,15 @@ include 'cabecalho.php';?>
 <?php
 include '../vendor/autoload.php';
 
+//Verificar se o usuário esta logado
+$uDAO = new \App\DAO\UsuarioDAO();
+$uDAO->verificar();
+
 if ($_GET['msg'] == 1)    echo "<div class='alert alert-success'>Produto Excluido com Sucesso</div>";
+
+if ($_GET['msg'] == 2)    echo "<div class='alert alert-success'>Produto Alterado com Sucesso</div>";
+
+if ($_GET['msg'] == 3)    echo "<div class='alert alert-success'>Usuário Logado com Sucesso</div>";
 
 $p = new \App\Model\Produto();
 isset($_GET['descricao']) ? $p->setDescricao($_GET['descricao']) : $p->setDescricao("");

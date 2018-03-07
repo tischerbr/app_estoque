@@ -57,6 +57,40 @@ class ProdutoDAO extends Conexao
         }
     }
 
+    public function pesquisarUM($produto)
+    {
+
+        $sql = "select * from produtos where id = :id";
+
+        try{
+            $i = $this->conexao->prepare($sql);
+            $i->bindValue( ":id", $produto->getId() );
+            $i->execute();
+            return $i->fetch(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e){
+            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>div>";
+        }
+    }
+
+
+    public function alterar($produto)
+    {
+
+        $sql = "update produtos set descricao = :descricao, quantidade = :quantidade, valor = :valor, validade = :validade where id = :id";
+
+        try{
+            $i = $this->conexao->prepare($sql);
+            $i->bindValue( ":id", $produto->getId());
+            $i->bindValue( ":descricao", $produto->getDescricao());
+            $i->bindValue( ":quantidade", $produto->getQuantidade());
+            $i->bindValue( ":valor", $produto->getValor());
+            $i->bindValue( ":validade", $produto->getValidade());
+            $i->execute();
+            return true;
+        } catch (\PDOException $e){
+            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>div>";
+        }
+    }
 
 
 }
