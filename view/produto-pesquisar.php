@@ -18,7 +18,6 @@ include 'cabecalho.php';?>
 
 <?php
 include '../vendor/autoload.php';
-
 //Verificar se o usuário esta logado
 $uDAO = new \App\DAO\UsuarioDAO();
 $uDAO->verificar();
