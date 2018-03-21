@@ -15,6 +15,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a href="produto-inserir.php" class="nav-link">Novo Produto</a></li>
                 <li class="nav-item"><a href="produto-pesquisar.php" class="nav-link">Pesquisar Produtos</a></li>
+                <li class="nav-item"><a href="livro-pesquisar.php" class="nav-link">Pesquisar Livros</a></li>
             </ul>
         </div>
         <a class="navbar-brand" href="logoff.php">Sair</a>

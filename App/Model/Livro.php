@@ -8,7 +8,7 @@
 
 namespace App\Model;
 
-class Produto
+class Livro
 {
     private $id;
     private $nome;
@@ -22,21 +22,20 @@ class Produto
     private $usuario;
 
 
-    public function __construct($id=NULL,    $nome=NULL,    $quantidade=null,    $isbn=NULL,    $data=null,
-                                array $categorias=NULL , array $autores=NULL,
-                                Usuario $usuario=NULL) {
-        $this->id = $id;
-        $this->nome = $nome;
-        $this->quantidade = $quantidade;
 
-        $this->isbn = $isbn;
-        $this->data = new DateTime();
+  //  public function __construct($id = null, $nome = null, $quantidade = null, $isbn = null,  $data = null, $categorias = null , $autores = null,  $usuario = null) {
+   //     $this->id = $id;
+   //     $this->nome = $nome;
+   //     $this->quantidade = $quantidade;
 
-        $this->autores = $autores;
-        $this->categorias = $categorias;
+   //     $this->isbn = $isbn;
+   //     $this->data = $data;
 
-        $this->usuario = $usuario;
-    }
+   //     $this->autores = $autores;
+   //     $this->categorias = $categorias;
+
+    //    $this->usuario = $usuario;
+   // }
 
     /**
      * @return mixed
@@ -120,21 +119,7 @@ class Produto
         $this->data = $data;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCategoria()
-    {
-        return $this->categoria;
-    }
 
-    /**
-     * @param mixed $categoria
-     */
-    public function setCategoria($categoria)
-    {
-        $this->categoria = $categoria;
-    }
 
 
 
@@ -160,6 +145,9 @@ class Produto
 
 
 
+
+
+
     /**
      * Gets the list of categories of this book
      *
@@ -177,6 +165,9 @@ class Produto
     public function setCategorias(array $categorias) {
         $this->categorias = $categorias;
     }
+
+
+
 
 
     /**
