@@ -14,18 +14,18 @@ class LivroDAO extends Conexao
     public function inserir($livro)
     {
 
-        $sql = "insert into livros (nome, quantidade, isbn, data, usuario_id) values (:nome, :quantidade, :isbn, :data, :usuario_id)";
+        $sql = "insert into livros (descricao, quantidade, valor, data) values (:descricao, :quantidade, :valor, :data)";
 
         try{
             $i = $this->conexao->prepare($sql);
-            $i->bindValue( ":nome", $livro->getNome());
-            $i->bindValue( ":quantidade", $livro->getQuantidade());
-            $i->bindValue( ":isbn", $livro->getIsbn());
-            $i->bindValue( ":data", $livro->getData());
+            $i->bindValue( ":descricao", $produto->getDescricao());
+            $i->bindValue( ":quantidade", $produto->getQuantidade());
+            $i->bindValue( ":valor", $produto->getIsbn());
+            $i->bindValue( ":validade", $produto->getData());
             $i->execute();
             return true;
         } catch (\PDOException $e){
-            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>div>";
+            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>";
         }
     }
 
@@ -38,7 +38,7 @@ class LivroDAO extends Conexao
         $i->execute();
         return $i->fetchAll(\PDO::FETCH_CLASS, "\App\Model\Livro");
         } catch (\PDOException $e){
-            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>div>";
+            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>";
         }
     }
 
@@ -53,7 +53,7 @@ class LivroDAO extends Conexao
             $i->execute();
             return $i->fetchAll(\PDO::FETCH_CLASS, "\App\Model\Livro");
         } catch (\PDOException $e){
-            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>div>";
+            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>";
         }
     }
 
@@ -68,7 +68,7 @@ class LivroDAO extends Conexao
             $i->execute();
             return $i->fetch(\PDO::FETCH_ASSOC);
         } catch (\PDOException $e){
-            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>div>";
+            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>";
         }
     }
 
@@ -88,7 +88,7 @@ class LivroDAO extends Conexao
             $i->execute();
             return true;
         } catch (\PDOException $e){
-            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>div>";
+            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>";
         }
     }
 

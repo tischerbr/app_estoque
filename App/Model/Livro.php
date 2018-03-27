@@ -22,21 +22,6 @@ class Livro
     private $usuario;
 
 
-
-  //  public function __construct($id = null, $nome = null, $quantidade = null, $isbn = null,  $data = null, $categorias = null , $autores = null,  $usuario = null) {
-   //     $this->id = $id;
-   //     $this->nome = $nome;
-   //     $this->quantidade = $quantidade;
-
-   //     $this->isbn = $isbn;
-   //     $this->data = $data;
-
-   //     $this->autores = $autores;
-   //     $this->categorias = $categorias;
-
-    //    $this->usuario = $usuario;
-   // }
-
     /**
      * @return mixed
      */

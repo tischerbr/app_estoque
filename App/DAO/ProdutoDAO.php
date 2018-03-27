@@ -25,7 +25,7 @@ class ProdutoDAO extends Conexao
             $i->execute();
             return true;
         } catch (\PDOException $e){
-            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>div>";
+            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>";
         }
     }
 
@@ -38,7 +38,7 @@ class ProdutoDAO extends Conexao
         $i->execute();
         return $i->fetchAll(\PDO::FETCH_CLASS, "\App\Model\Produto");
         } catch (\PDOException $e){
-            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>div>";
+            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>";
         }
     }
 
@@ -53,7 +53,7 @@ class ProdutoDAO extends Conexao
             $i->execute();
             return $i->fetchAll(\PDO::FETCH_CLASS, "\App\Model\Produto");
         } catch (\PDOException $e){
-            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>div>";
+            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>";
         }
     }
 
@@ -68,7 +68,7 @@ class ProdutoDAO extends Conexao
             $i->execute();
             return $i->fetch(\PDO::FETCH_ASSOC);
         } catch (\PDOException $e){
-            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>div>";
+            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>";
         }
     }
 
@@ -88,7 +88,7 @@ class ProdutoDAO extends Conexao
             $i->execute();
             return true;
         } catch (\PDOException $e){
-            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>div>";
+            echo "<div class='alert alert-danger'> ($e->getMessage()}</div>";
         }
     }
 

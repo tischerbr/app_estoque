@@ -25,7 +25,7 @@ class UsuarioDAO extends Conexao
             $_SESSION['id'] = $resultado['id'];
             return $i;
         } catch (\PDOException $e){
-            echo "<div class='alert alert-danger'>($e->getMessage()}</div>div>";
+            echo "<div class='alert alert-danger'>($e->getMessage()}</div>";
         }
     }
 

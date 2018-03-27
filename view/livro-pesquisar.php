@@ -8,7 +8,7 @@ include 'cabecalho.php';?>
             <label for="nome">Descrição: </label>
         </div>
         <div class="form-group mx-sm-3 mb-2">
-            <input type="text" class="form-control" id="nome" name="nome" placeholder="Ex.: Sabão em pó" autofocus>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Ex.: A grande caçada" autofocus>
         </div>
         <button type="submit" class="btn btn-primary mb-2">
             <img src="../assets/images/ic_search_white_24px.svg" alt="Pesquisar">
@@ -33,9 +33,6 @@ isset($_GET['nome']) ? $p->setNome($_GET['nome']) : $p->setNome("");
 $pDAO = new \App\DAO\LivroDAO();
 $livros = $pDAO->pesquisar($p);
 
-
-
-
 if (count($livros) > 0){
     echo  count($livros)
     ?>
@@ -58,7 +55,7 @@ if (count($livros) > 0){
             echo "<td>{$livro->getQuantidade()}</td>";
             echo "<td>{$livro->getIsbn()}</td>";
             echo "<td>{$livro->getUsuario()}</td>";
-            echo "<td><a class='btn btn-danger' href='livro-excluir.php?id={$livro->getId()}'>Ecluir </a></td>";
+            echo "<td><a class='btn btn-danger' href='livro-excluir.php?id={$livro->getId()}'>Excluir </a></td>";
             echo "<td><a class='btn btn-warning' href='livro-alterar.php?id={$livro->getId()}'>Alterar</a></td>";
             echo "<tr>";
         }
